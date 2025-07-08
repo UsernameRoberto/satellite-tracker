@@ -1,0 +1,153 @@
+/* Ensure html and body fill the viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Oxanium', sans-serif;
+}
+#map {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+#map.fade-in {
+  opacity: 1;
+}
+/* Base map container styles */
+#map {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+/* Fullscreen styles with vendor prefixes */
+#map:fullscreen,
+#map:-webkit-full-screen, /* Safari */
+#map:-moz-full-screen,    /* Firefox */
+#map:-ms-fullscreen       /* IE/Edge */ {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+/* Panel styles */
+.panel {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.panel button {
+  width: 100%;
+  margin: 4px 0;
+  padding: 6px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background: #555;
+  color: white;
+  cursor: pointer;
+}
+
+.panel button:hover {
+  background: #666;
+}
+
+.light .panel {
+  background: #eee;
+  color: #111;
+}
+
+.light .panel button {
+  background: #ccc;
+  color: #111;
+}
+
+/* Satellite selector dropdown */
+#satelliteDropdown {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  z-index: 1002;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark #satelliteDropdown {
+  background: #333;
+  color: #fff;
+}
+
+/* Custom tooltip styles */
+.custom-tooltip {
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+  color: white;
+  font-size: 13px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.leaflet-tooltip.custom-tooltip {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* Floating tooltip */
+.floating-tooltip {
+  background: rgba(0,0,0,0.75);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  white-space: nowrap;
+  user-select: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  z-index: 10000;
+}
+
+/* Fullscreen toggle button */
+#fullscreenToggle {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+  padding: 6px 12px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+body.light #fullscreenToggle {
+  background: #fff;
+  color: #000;
+}
+
+#fullscreenToggle i {
+  font-size: 18px;
+}
+
+#fullscreenToggle:hover {
+  background: #444;
+}

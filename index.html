@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satellite Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oxanium'> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+</head>
+
+<body class="dark"> <!-- or 'light' -->
+
+  <div id="map">
+<div id="floatingTooltip" class="floating-tooltip" style="opacity:0; position:absolute; pointer-events:none;"></div>
+<button id="fullscreenToggle"><i class="fas fa-eye"></i></button>
+  <div class="panel">
+  <div id="telemetry-data">
+  Lat: --<br>
+  Lon: --<br>
+  Alt: --<br>
+  Vel: --<br>
+</div>
+
+  <button id="kmhBtn">Km/h</button>
+  <button id="mphBtn">Mph</button>
+  <button id="themeToggle">Toggle Theme</button>
+</div>
+
+<select id="satelliteDropdown" style="position: absolute; top: 10px; right: 10px; z-index: 999; padding: 5px;">
+  <option value="iss">ISS (ZARYA)</option> <!-- initial default -->
+</select>
+</div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="satellite.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
